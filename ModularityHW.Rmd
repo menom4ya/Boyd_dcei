@@ -7,6 +7,8 @@ output:
   word_document: default
 ---
 
+<!--***DAN: The assignment requested that you identify in comments in your Rmd in which ways you have used the concepts of modularity that we learned, but you have not done that.-->
+
 *Climate Change Analysis*  
 
 The data used in this analysis was compiled from 1950-2008 provided by USGS. This analysis will evaluate weather temperature and precipitation of the state of Alabama. In 1975, the eastern U.S. experienced its greatest levels of precipitation leaving a historical bookmark for climatologists. Sometimes referenced as the Panhandle Hook, The Great storm of 1975 brought grave disaster to the eastern region of the United States.  
@@ -15,6 +17,11 @@ The data used in this analysis was compiled from 1950-2008 provided by USGS. Thi
 
 If high precipitation events occur in year one, then temperatures will be cooler in year two.  
 
+<!--***DAN: The data are used on lines 24 and 25, but they have not been loaded yet (from disk or elsewhere)
+so this will not work by itself. IF the data were loaded it looks like it would work OK. You just need
+a chunk prior to this one to load the data.-->
+
+<!--***DAN: you generally do not want your code to appear in a scientific paper, so in this case you should use echo=F in the chunk header-->
 
 ```{r}
 #Precip1-Temp2
@@ -33,6 +40,8 @@ The initial regression falsifies the hypothesis showing no direct correlation to
 
 #Other way  
 
+<!--***DAN:You do not need to repeat lines 45 and 46, if you had them from the earlier chunk they are still there.-->
+
 ```{r Precip2-Temp1}
 
 #Do warmer temperatures in year one influence higher precipitation in year Two?
@@ -49,6 +58,11 @@ plot(AnnualALtemp2$data[1:(nrow(AnnualALtemp2)-1)],AnnualALprecip2$data[2:(nrow(
 #Both  
 
 The next set of plot identify the mean temperature from 1974-1975. The difference is minimal at 53°-52.4°= which is a differnce of only .06°. This plot reinforces the false hypothesis with a direct analysis of climate variances of a high percipitation event.  A comparison of temperature Vs. precipitation generates one data point at roughly 52.4°. 
+
+<!--***DAN:You seem to understand how to filter subsets meeting certain conditions out of data frames, and 
+that's good-->
+
+
 
 ```{r}
 
@@ -89,7 +103,7 @@ plot(data~year,data=AnnualALtemp7475, xlab="Year", ylab = "Mean Temperature")
 The initial hypothesis has been debunked and has proved the opposite where was temperature was cooler while precipitation was higher the same year. 
 
 
-
+<!--***DAN: you should delete the below remnant of the original file, you do not need it-->
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
